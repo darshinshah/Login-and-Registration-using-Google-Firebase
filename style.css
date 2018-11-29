@@ -1,0 +1,125 @@
+body {
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 10s; /* Chrome and Safari */
+  animation-iteration-count: infinite;
+}
+
+@keyframes colorchange
+{
+  0%   {background: #F08080;}
+  25%  {background: #4B0082;}
+  50%  {background: #7B68EE;}
+  75%  {background: #2E8B57;}
+  100% {background: #FF6347;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: #F08080;}
+  25%  {background: #4B0082;}
+  50%  {background: #7B68EE;}
+  75%  {background: #2E8B57;}
+  100% {background: #FF6347;}
+}
+
+
+a{
+
+  color: white;
+  text-decoration: none;
+
+}
+
+
+input, button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+button{
+  animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 10s; /* Chrome and Safari */
+  animation-iteration-count: infinite;
+}
+
+.main-div, .loggedin-div {
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 25%;
+  padding: 20px;  /*change here tp 20*/
+  display: none;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+button:focus { outline: none; }
+
+
+.main-div button, .loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div button:hover, .loggedin-div button:hover {
+  background: #fff;
+  border: 10px solid;
+  border-radius: 5px
+  cursor: pointer;
+}
+
+.card {
+  transition: 0.3s;
+  padding: 0px;
+  margin-left: 30%;
+  margin-right: 30%; 
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 0px 0px 0px 0px;
+}
+
+.signupcard{
+  transition: 0.3s;
+  padding: 0px;
+  margin-left: 30%;
+  margin-right: 30%; 
+  background-color: transparent;
+  border-radius: 10px;
+}

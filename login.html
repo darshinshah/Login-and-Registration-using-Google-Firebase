@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="container">
+      <div id="login_div" class="main-div">
+        <h3 style="text-align: center">Login</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+
+        <button onclick="login()">Login Using Email</button><br>
+        <button onclick="googlelogin()">Login Using Google</button><br>
+        <button onclick="facebooklogin()">Login Using Facebook</button><br>
+      </div>
+      <div id="user_div" class="loggedin-div">
+        <h3>Welcome User</h3>
+        <p id="user_para">You're currently logged in.</p>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </div>   
+  <br>
+  <div id="signup_div" class="signupcard">
+   <button style="background-color: transparent; color:white; align-content: center; margin-left: 40% ;align-items: center; border-color: transparent; width: auto;"><a href="signup.html">SignUp instead ?</a></button>
+ </div>
+ <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+ <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAXfptu9-LiHJiMKIzBn1twIUYOpGHQX98",
+        authDomain: "darshinshah123.firebaseapp.com",
+        databaseURL: "https://darshinshah123.firebaseio.com",
+        projectId: "darshinshah123",
+        storageBucket: "darshinshah123.appspot.com",
+        messagingSenderId: "436499856191"
+      };
+      firebase.initializeApp(config);
+
+      googlelogin=()=>{
+        var provider = new firebase.auth.GoogleAuthProvider()
+        firebase.auth().signInWithPopup(provider).then(function(result){
+          console.log(result)
+          console.log("Success")
+        }).catch(function(error) {
+          console.log(error)
+          console.log("Failed")
+        })
+      }
+
+      facebooklogin=()=>{
+        var provider = new firebase.auth.FacebookAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function(result){
+          console.log(result)
+          console.log("Success")
+        }).catch(function(error) {
+          console.log(error)
+          console.log("Failed")
+        })
+      }
+    </script>
+    <script src="index.js"></script>
+  </body>
+  </html>
